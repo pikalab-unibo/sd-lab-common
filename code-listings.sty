@@ -40,12 +40,26 @@
 \lstdefinelanguage{JavaScript}{
     keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, let, const},
     ndkeywords={class, export, boolean, throw, implements, import, this},
-    sensitive=false,
+    sensitive=true,
     comment=[l]{//},
     morecomment=[s]{/*}{*/},
     morestring=[b]',
     morestring=[b]",
     emph={Companion},
+}
+
+\lstdefinelanguage{Docker}{
+  basicstyle=\scriptsize\ttfamily,
+  keywords={FROM, RUN, COPY, ADD, ENTRYPOINT, CMD,  ENV, ARG, WORKDIR, EXPOSE, LABEL, USER, VOLUME, STOPSIGNAL, ONBUILD, MAINTAINER},
+%   keywordstyle=\color{blue}\bfseries,
+%   identifierstyle=\color{black},
+  tabsize=2,
+  sensitive=true,
+  comment=[l]{\#},
+%   commentstyle=\color{purple}\ttfamily,
+%   stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
 }
 
 \newcommand{\prolog}[1]{\lstinline[style=Prolog-cool,basicstyle=\ttfamily\normalsize]{#1}}
@@ -62,3 +76,4 @@
 \newcommand{\jsimport}[2][{}]{\lstinputlisting[#1,language=JavaScript]{#2}}
 \newcommand{\kotlinimport}[2][{}]{\lstinputlisting[#1,language=Kotlin]{#2}}
 \newcommand{\pythonimport}[2][{}]{\lstinputlisting[#1,language=Python]{#2}}
+\newcommand{\dockerimport}[2][{}]{\lstinputlisting[#1,language=Docker]{#2}}
