@@ -13,11 +13,7 @@ jobs:
           
       - name: Get Version
         id: get-version
-        run: echo "::set-output name=version::$(cat ise-*.sty | python .github/scripts/compute-version.py)"
-
-      - name: Get Time
-        id: current-time
-        run: echo "::set-output name=time::$(date +'%Y-%m-%d-%H-%M')"
+        run: echo "::set-output name=version::$(date +'%Y.%m.%d+%H-%M')"
         
       - name: Zip files to release
         run: zip style.zip *.sty
@@ -25,7 +21,7 @@ jobs:
       - name: Release Assets
         id: upload-release-assets
         env: 
-          RELEASE_TAG: '${{ steps.get-version.outputs.version }}+${{ steps.current-time.outputs.time }}'
+          RELEASE_TAG: '${{ steps.get-version.outputs.version }}'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -x
