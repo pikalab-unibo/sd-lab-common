@@ -8,6 +8,9 @@
 \usepackage{code-listings}
 \usepackage{wasysym}
 \usepackage[yyyymmdd]{datetime}
+\usepackage{enumerate}
+\usepackage{cleveref}
+
 
 \renewcommand{\dateseparator}{}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -17,8 +20,9 @@
 \def\theLabN{0}
 \newcommand{\labN}[1]{\def\theLabN{#1}}
 
-% \definecolor{links}{HTML}{0000FF}
+ \definecolor{links}{HTML}{0000FF}
 % \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\newcommand{\bluehref}[2]{{\color{blue}\href{#1}{#2}}}
 
 \newcommand{\currentLab}{L\theLabN}
 
@@ -48,6 +52,7 @@
 \newcommand{\projectForum}{\vle{1284519}}
 \newcommand{\githubsd}[1]{https://github.com/pikalab-unibo/ds-#1}
 \newcommand{\projectRules}{\apice/Projects/Rules}
+\newcommand{\template}{https://www.overleaf.com/read/thjtqmskvzcs}
 
 \newcommand{\gcFull}{Giovanni Ciatto}
 \newcommand{\gcShort}{G. Ciatto}
